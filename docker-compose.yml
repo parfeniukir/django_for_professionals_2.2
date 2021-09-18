@@ -4,19 +4,21 @@ services:
   web:
     build: .
     command: python /code/manage.py runserver 0.0.0.0:8000
-    environment: 
-      - SECRET_KEY==1^bv_am36())e&7r+t43%g+cj-^^uom8f+m%kg@a(np4x^_*m
-      - DEBUG=1
     volumes:
       - .:/code
     ports:
       - 8000:8000
     depends_on: 
       - db
+    environment: 
+      - SECRET_KEY==1^bv_am36())e&7r+t43%g+cj-^^uom8f+m%kg@a(np4x^_*m
+      - DEBUG=1
   db:
     image: postgres:11
     volumes: 
-     - postgres_data:/var/lib/postgresql/data
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=postgres
 
 volumes: 
   postgres_data:
