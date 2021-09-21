@@ -4,7 +4,7 @@ services:
   web:
     build: .
     command: python /code/manage.py runserver 0.0.0.0:8000
-        environment: 
+    environment: 
       - SECRET_KEY==1^bv_am36())e&7r+t43%g+cj-^^uom8f+m%kg@a(np4x^_*m
       - DEBUG=1
       - STRIPE_TEST_PUBLISHABLE_KEY=<pk_test_51Jc3EaBvEyqc6wMG3o9sufOgXwquIW4bJMS7S2o8IM9ImW5mnKRX29DiFuWlTnjp3m1lQYx1RJDTQIEm2r5yvKPN00XjlcdyiE>
